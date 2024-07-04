@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/ramanpreet-2911/vegetable-quiz/static/css/main.86c7d594.css",
+    "main.js": "/ramanpreet-2911/vegetable-quiz/static/js/main.1189ae58.js",
+    "static/media/tomato.jpg": "/ramanpreet-2911/vegetable-quiz/static/media/tomato.295f39e95cfabc1e5656.jpg",
+    "static/media/lettuce.jpg": "/ramanpreet-2911/vegetable-quiz/static/media/lettuce.11760c4a2501275acb07.jpg",
+    "static/media/bell_pepper.jpeg": "/ramanpreet-2911/vegetable-quiz/static/media/bell_pepper.f737cdf436672d8184a6.jpeg",
+    "static/media/carrot.jpeg": "/ramanpreet-2911/vegetable-quiz/static/media/carrot.b3cd1f085d967ae9ac5b.jpeg",
+    "index.html": "/ramanpreet-2911/vegetable-quiz/index.html",
+    "main.86c7d594.css.map": "/ramanpreet-2911/vegetable-quiz/static/css/main.86c7d594.css.map",
+    "main.1189ae58.js.map": "/ramanpreet-2911/vegetable-quiz/static/js/main.1189ae58.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86c7d594.css",
+    "static/js/main.1189ae58.js"
+  ]
+}
