@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/vegetable-quiz/static/css/main.86c7d594.css",
-    "main.js": "/vegetable-quiz/static/js/main.0ab57203.js",
+    "main.css": "/vegetable-quiz/static/css/main.0e2beb6c.css",
+    "main.js": "/vegetable-quiz/static/js/main.e08f33bc.js",
     "static/media/tomato.jpg": "/vegetable-quiz/static/media/tomato.295f39e95cfabc1e5656.jpg",
     "static/media/lettuce.jpg": "/vegetable-quiz/static/media/lettuce.11760c4a2501275acb07.jpg",
     "static/media/bell_pepper.jpeg": "/vegetable-quiz/static/media/bell_pepper.f737cdf436672d8184a6.jpeg",
     "static/media/carrot.jpeg": "/vegetable-quiz/static/media/carrot.b3cd1f085d967ae9ac5b.jpeg",
     "index.html": "/vegetable-quiz/index.html",
-    "main.86c7d594.css.map": "/vegetable-quiz/static/css/main.86c7d594.css.map",
-    "main.0ab57203.js.map": "/vegetable-quiz/static/js/main.0ab57203.js.map"
+    "main.0e2beb6c.css.map": "/vegetable-quiz/static/css/main.0e2beb6c.css.map",
+    "main.e08f33bc.js.map": "/vegetable-quiz/static/js/main.e08f33bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.86c7d594.css",
-    "static/js/main.0ab57203.js"
+    "static/css/main.0e2beb6c.css",
+    "static/js/main.e08f33bc.js"
   ]
 }
