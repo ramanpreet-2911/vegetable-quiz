@@ -1,8 +1,7 @@
-// src/components/Quiz.js
-import React, { useState, useEffect } from 'react';
-import questions from './data/questions';
-import Question from './Question';
-import Result from './Result';
+import React, { useState, useEffect } from "react";
+import questions from "./data/questions";
+import Question from "./Question";
+import Result from "./Result";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -10,7 +9,7 @@ const Quiz = () => {
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
-    const savedProgress = JSON.parse(localStorage.getItem('quizProgress'));
+    const savedProgress = JSON.parse(localStorage.getItem("quizProgress"));
     if (savedProgress) {
       setCurrentQuestion(savedProgress.currentQuestion);
       setAnswers(savedProgress.answers);
@@ -19,13 +18,16 @@ const Quiz = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('quizProgress', JSON.stringify({ currentQuestion, answers, showResult }));
+    localStorage.setItem(
+      "quizProgress",
+      JSON.stringify({ currentQuestion, answers, showResult })
+    );
   }, [currentQuestion, answers, showResult]);
 
   const handleAnswer = (answer) => {
-    setAnswers(prevAnswers => ({
+    setAnswers((prevAnswers) => ({
       ...prevAnswers,
-      [answer]: prevAnswers[answer] + 1
+      [answer]: prevAnswers[answer] + 1,
     }));
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
@@ -36,7 +38,9 @@ const Quiz = () => {
   };
 
   const getResult = () => {
-    const result = Object.keys(answers).reduce((a, b) => answers[a] > answers[b] ? a : b);
+    const result = Object.keys(answers).reduce((a, b) =>
+      answers[a] > answers[b] ? a : b
+    );
     return result;
   };
 
@@ -44,25 +48,31 @@ const Quiz = () => {
     setCurrentQuestion(0);
     setAnswers({ a: 0, b: 0, c: 0, d: 0 });
     setShowResult(false);
-    localStorage.removeItem('quizProgress');
+    localStorage.removeItem("quizProgress");
   };
 
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div>
+    <div className="quiz-container">
       {showResult ? (
         <div>
           <Result result={getResult()} />
-          <button className="restart-button" onClick={handleRestart}>Restart Quiz</button>
+          <div className="button-container">
+            <button className="restart-button" onClick={handleRestart}>
+              Restart Quiz
+            </button>
+          </div>
         </div>
       ) : (
         <div>
           <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-          <Question 
-            data={questions[currentQuestion]} 
-            handleAnswer={handleAnswer} 
-          />
+          <div className="question-container">
+            <Question
+              data={questions[currentQuestion]}
+              handleAnswer={handleAnswer}
+            />
+          </div>
         </div>
       )}
     </div>

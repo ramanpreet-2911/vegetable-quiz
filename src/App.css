@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f5f1de; /* Pastel yellow background */
   margin: 0;
   padding: 0;
 }
@@ -13,19 +13,12 @@ h1 {
   margin-top: 20px;
 }
 
-.quiz-container {
-  max-width: 600px;
-  margin: 30px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .question {
   font-size: 18px;
   color: #555;
   margin-bottom: 20px;
+  word-wrap: break-word; /* Prevent text cutoff */
+  text-align: left; /* Left align text within the question */
 }
 
 .options {
@@ -34,17 +27,19 @@ h1 {
 }
 
 .options li {
-  background: #007bff;
-  color: white;
+  background: #ffd166; /* Pastel yellow button color */
+  color: #333;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+  word-wrap: break-word; /* Prevent text cutoff */
 }
 
 .options li:hover {
-  background: #0056b3;
+  background: #4caf50; /* Green on hover */
+  color: white; /* Text color on hover */
   transform: scale(1.05);
 }
 
@@ -53,12 +48,14 @@ h1 {
   font-size: 24px;
   color: #333;
   margin-top: 20px;
+  word-wrap: break-word; /* Prevent text cutoff */
 }
 
 .result-description {
   font-size: 18px;
   color: #666;
   margin-top: 10px;
+  word-wrap: break-word; /* Prevent text cutoff */
 }
 
 .result-image {
@@ -86,23 +83,45 @@ h1 {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background: #007bff;
+  background: #ff851b; /* Pastel orange button color */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s;
+  text-align: center;
 }
 
 .restart-button:hover {
-  background: #0056b3;
+  background: #ff7700; /* Darker orange on hover */
 }
 
 .progress-bar {
   height: 5px;
-  background: #007bff;
+  background: #4caf50; /* Green progress bar */
   margin-bottom: 20px;
   border-radius: 3px;
+}
+
+.home-screen {
+  text-align: center;
+  padding: 50px;
+  color: #333;
+}
+
+.start-button {
+  background: #4caf50; /* Green button color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.start-button:hover {
+  background: #45a049; /* Darker green on hover */
 }
 
 @media (max-width: 600px) {
@@ -114,4 +133,50 @@ h1 {
   .result-image {
     width: 100%;
   }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.result-container {
+  margin: 0 auto; /* Center the result container */
+  max-width: 600px; /* Ensure a maximum width */
+  padding: 20px; /* Add padding for spacing */
+  background: #f5f1de; /* Pastel yellow background for the result container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Additional styles for Quiz component */
+
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure full viewport height */
+  background-color: #f0ead6; /* Pastel orange background */
+  margin: 0;
+  padding: 0;
+}
+
+.quiz-content {
+  max-width: 600px;
+  width: 100%;
+  background: #f5f1de; /* Pastel yellow */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align all content */
+}
+
+.question-container {
+  margin: 0 auto; /* Center horizontally */
+  max-width: 600px; /* Example max-width for the question container */
+  padding: 20px; /* Padding for spacing */
+  background-color: #f5f1de; /* Pastel yellow background for question container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Example shadow */
+  border-radius: 8px; /* Rounded corners */
 }

@@ -4,7 +4,7 @@ import tomatoImage from '../images/tomato.jpg';
 import lettuceImage from '../images/lettuce.jpg';
 import bellPepperImage from '../images/bell_pepper.jpeg';
 import carrotImage from '../images/carrot.jpeg';
-
+// import ShareResult from './ShareResult'; // Ensure this path is correct
 
 const Result = ({ result }) => {
   const getResultContent = (result) => {
@@ -45,20 +45,26 @@ const Result = ({ result }) => {
   const resultContent = getResultContent(result);
 
   return (
-    <div className="result" role="alert" aria-live="assertive">
-      <h2>{resultContent.title}</h2>
-      <p className="result-description">{resultContent.description}</p>
-      <img className="result-image" src={resultContent.image} alt={resultContent.title} />
-      <p>
-        <a 
-          className="wiki-link" 
-          href={resultContent.link} 
-          target="_blank" 
-          rel="noopener noreferrer"
-        >
-          Learn more about {resultContent.title.replace('You are a ', '')} on Wikipedia
-        </a>
-      </p>
+    <div className="result-container">
+      <div className="result" role="alert" aria-live="assertive">
+        <h2>{resultContent.title}</h2>
+        <p className="result-description">{resultContent.description}</p>
+        <img className="result-image" src={resultContent.image} alt={resultContent.title} />
+        <p>
+          <a 
+            className="wiki-link" 
+            href={resultContent.link} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Learn more about {resultContent.title.replace('You are a ', '')} on Wikipedia
+          </a>
+        </p>
+        {/* <ShareResult resultTitle={resultContent.title.replace('You are a ', '')} />
+        <div className="button-container">
+          <button className="restart-button" onClick={() => window.location.reload()}>Restart Quiz</button>
+        </div> */}
+      </div>
     </div>
   );
 };
