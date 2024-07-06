@@ -1,0 +1,23 @@
+/* src/components/HomeScreen.css */
+
+.home-screen {
+    text-align: center;
+    padding: 50px;
+    color: #333;
+  }
+  
+  .start-button {
+    background: #28a745; /* Green button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+  }
+  
+  .start-button:hover {
+    background: #218838; /* Darker green on hover */
+  }
+  

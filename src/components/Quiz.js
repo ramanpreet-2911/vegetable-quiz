@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
-import questions from "./data/questions";
-import Question from "./Question";
-import Result from "./Result";
+// src/components/Quiz.js
+import React, { useState, useEffect } from 'react';
+import questions from './data/questions'; // Adjust path as per your project structure
+import Question from './Question';
+import Result from './Result';
 
-const Quiz = () => {
+const Quiz = ({ onRestart }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({ a: 0, b: 0, c: 0, d: 0 });
   const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
-    const savedProgress = JSON.parse(localStorage.getItem("quizProgress"));
+    const savedProgress = JSON.parse(localStorage.getItem('quizProgress'));
     if (savedProgress) {
       setCurrentQuestion(savedProgress.currentQuestion);
       setAnswers(savedProgress.answers);
@@ -19,7 +20,7 @@ const Quiz = () => {
 
   useEffect(() => {
     localStorage.setItem(
-      "quizProgress",
+      'quizProgress',
       JSON.stringify({ currentQuestion, answers, showResult })
     );
   }, [currentQuestion, answers, showResult]);
@@ -48,7 +49,8 @@ const Quiz = () => {
     setCurrentQuestion(0);
     setAnswers({ a: 0, b: 0, c: 0, d: 0 });
     setShowResult(false);
-    localStorage.removeItem("quizProgress");
+    localStorage.removeItem('quizProgress');
+    onRestart(); // Callback to reset quiz state in parent component
   };
 
   const progress = ((currentQuestion + 1) / questions.length) * 100;
@@ -68,10 +70,7 @@ const Quiz = () => {
         <div>
           <div className="progress-bar" style={{ width: `${progress}%` }}></div>
           <div className="question-container">
-            <Question
-              data={questions[currentQuestion]}
-              handleAnswer={handleAnswer}
-            />
+            <Question data={questions[currentQuestion]} handleAnswer={handleAnswer} />
           </div>
         </div>
       )}
